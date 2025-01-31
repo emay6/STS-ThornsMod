@@ -1,0 +1,10 @@
+{
+  "${modID}:StrikeThorns": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "${modID}:DefendThorns": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block."
+  }
+}
