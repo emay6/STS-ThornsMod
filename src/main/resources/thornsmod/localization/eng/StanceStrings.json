@@ -1,0 +1,8 @@
+{
+  "${modID}:ThornsMode": {
+    "NAME": "Thorns",
+    "DESCRIPTION": [
+      "Upon entering this #yMode, gain 10 Block and #yProtective #ySpikes. Upon playing an Attack, exit this #yMode."
+    ]
+  }
+}

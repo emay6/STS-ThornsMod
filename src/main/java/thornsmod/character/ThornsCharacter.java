@@ -25,6 +25,7 @@ import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import thornsmod.ThornsMod;
 import thornsmod.cards.DefendThorns;
 import thornsmod.cards.StrikeThorns;
+import thornsmod.cards.ThornProtection;
 
 import java.util.ArrayList;
 
@@ -147,6 +148,7 @@ public class ThornsCharacter extends CustomPlayer {
         retVal.add(DefendThorns.ID);
         retVal.add(DefendThorns.ID);
         retVal.add(DefendThorns.ID);
+        retVal.add(ThornProtection.ID);
 
         return retVal;
     }

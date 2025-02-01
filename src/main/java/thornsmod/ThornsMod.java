@@ -34,7 +34,8 @@ public class ThornsMod implements
         EditKeywordsSubscriber,
         PostInitializeSubscriber,
         EditCharactersSubscriber,
-        EditCardsSubscriber {
+        EditCardsSubscriber,
+        AddAudioSubscriber {
     public static ModInfo info;
     public static String modID; //Edit your pom.xml to change this
     static { loadModInfo(); }
@@ -103,7 +104,7 @@ public class ThornsMod implements
 
     private void loadLocalization(String lang) {
         //While this does load every type of localization, most of these files are just outlines so that you can see how they're formatted.
-        //Feel free to comment out/delete any that you don't end up using.
+        //Feel free to comment out/delete any that you don't end up u1ing.
         BaseMod.loadCustomStringsFile(CardStrings.class,
                 localizationPath(lang, "CardStrings.json"));
         BaseMod.loadCustomStringsFile(CharacterStrings.class,
@@ -120,6 +121,8 @@ public class ThornsMod implements
                 localizationPath(lang, "RelicStrings.json"));
         BaseMod.loadCustomStringsFile(UIStrings.class,
                 localizationPath(lang, "UIStrings.json"));
+        BaseMod.loadCustomStringsFile(StanceStrings.class,
+                localizationPath(lang, "StanceStrings.json"));
     }
 
     @Override
@@ -174,6 +177,9 @@ public class ThornsMod implements
     }
     public static String relicPath(String file) {
         return resourcesFolder + "/images/relics/" + file;
+    }
+    public static String sfxPath(String file) {
+        return resourcesFolder + "/audio/sfx/" + file;
     }
 
     /**
@@ -236,5 +242,11 @@ public class ThornsMod implements
                 .packageFilter(BaseCard.class)
                 .setDefaultSeen(true)
                 .cards();
+    }
+
+    @Override
+    public void receiveAddAudio() {
+        BaseMod.addAudio(makeID("MODE_ENTER_THORNS"), sfxPath("ThornsEnter.ogg"));
+        BaseMod.addAudio(makeID("MODE_ENTER_DESTREZA"), sfxPath("DestrezaEnter.ogg"));
     }
 }

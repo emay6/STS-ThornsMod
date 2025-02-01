@@ -1,8 +1,8 @@
 {
-  "${modID}:PowerID": {
-    "NAME": "Ultimate Power",
+  "${modID}:ProtectiveSpikes": {
+    "NAME": "Protective Spikes",
     "DESCRIPTIONS": [
-      "You are Very Cool and Strong."
+      "When attacked, deal 3 damage back. Wears off upon exiting Thorns."
     ]
   }
 }

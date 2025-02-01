@@ -6,5 +6,9 @@
   "${modID}:DefendThorns": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block."
+  },
+  "${modID}:ThornProtection": {
+    "NAME": "Thorn Protection",
+    "DESCRIPTION": "Enter ${modID}:Thorns."
   }
 }
