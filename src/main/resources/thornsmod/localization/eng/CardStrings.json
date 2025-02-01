@@ -14,5 +14,9 @@
   "${modID}:Neurotoxin": {
     "NAME": "Neurotoxin",
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! ${modID}:Corrosion. NL ${modID}:Echo if in ${modID}:Thorns."
+  },
+  "${modID}:Destreza": {
+    "NAME": "Destreza",
+    "DESCRIPTION": "Enter ${modID}:Destreza."
   }
 }

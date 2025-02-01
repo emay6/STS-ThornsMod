@@ -3,6 +3,7 @@ package thornsmod;
 import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.interfaces.*;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import thornsmod.cards.BaseCard;
 import thornsmod.character.ThornsCharacter;
 import thornsmod.util.GeneralUtils;
@@ -35,7 +36,8 @@ public class ThornsMod implements
         PostInitializeSubscriber,
         EditCharactersSubscriber,
         EditCardsSubscriber,
-        AddAudioSubscriber {
+        AddAudioSubscriber,
+        OnStartBattleSubscriber {
     public static ModInfo info;
     public static String modID; //Edit your pom.xml to change this
     static { loadModInfo(); }
@@ -250,6 +252,14 @@ public class ThornsMod implements
         BaseMod.addAudio(makeID("MODE_ENTER_DESTREZA"), sfxPath("DestrezaEnter.ogg"));
         BaseMod.addAudio(makeID("POWER_CORROSION"), sfxPath("CorrosionApply.ogg"));
         BaseMod.addAudio(makeID("ECHO_ACTIVATE"), sfxPath("EchoActivate.ogg"));
+        BaseMod.addAudio(makeID("DESTREZA_ATTACK"), sfxPath("DestrezaAttack.ogg"));
 
+    }
+
+    @Override
+    public void receiveOnBattleStart(AbstractRoom abstractRoom) {
+        ThornsCharacter.destrezaAttackCounter = 0;
+        ThornsCharacter.timesDestrezaEntered = 0;
+        ThornsCharacter.destrezaActive = false;
     }
 }

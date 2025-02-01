@@ -10,8 +10,9 @@ import thornsmod.modes.DestrezaMode;
 import thornsmod.modes.ThornsMode;
 import thornsmod.util.CardStats;
 
-public class ThornProtection extends BaseCard {
-    public static final String ID = makeID(ThornProtection.class.getSimpleName());
+// for easier testing destreza
+public class Destreza extends BaseCard {
+    public static final String ID = makeID(Destreza.class.getSimpleName());
 
     // basic card info
     private static final CardStats info = new CardStats(
@@ -19,24 +20,21 @@ public class ThornProtection extends BaseCard {
             CardType.SKILL,
             CardRarity.BASIC,
             CardTarget.SELF,
-            2
+            0
     );
-    private static final int UPG_COST = 1;
 
-    public ThornProtection() {
+    public Destreza() {
         super(ID, info);
-
-        setCostUpgrade(UPG_COST);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ChangeStanceAction(new ThornsMode()));
+        addToBot(new ChangeStanceAction(new DestrezaMode()));
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new ThornProtection();
+        return new Destreza();
     }
 
 }

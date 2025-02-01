@@ -2,7 +2,13 @@
   "${modID}:ThornsMode": {
     "NAME": "Thorns",
     "DESCRIPTION": [
-      "Upon entering this #yMode, gain 10 Block and #yProtective #ySpikes. Upon playing an Attack, exit this #yMode."
+      "Upon entering this #yMode, gain 10 Block and #yProtective #ySpikes. Exit this #yMode when you play an attack."
+    ]
+  },
+  "${modID}:DestrezaMode": {
+    "NAME": "Destreza",
+    "DESCRIPTION": [
+      "Attacks deal double damage. #b25% of damage dealt will apply to all enemies. The first time you enter this #yMode in a combat, exit it at the start of your next turn."
     ]
   }
 }

@@ -10,7 +10,6 @@ import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.red.Strike_Red;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
@@ -19,6 +18,7 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.relics.BurningBlood;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import thornsmod.ThornsMod;
 import thornsmod.cards.basic.DefendThorns;
@@ -35,6 +35,11 @@ public class ThornsCharacter extends CustomPlayer {
     public static final int STARTING_GOLD = 99;
     public static final int CARD_DRAW = 5;
     public static final int ORB_SLOTS = 0;
+    public static final int DESTREZA_COST = 15;
+
+    public static int destrezaAttackCounter = 0;
+    public static int timesDestrezaEntered = 0;
+    public static boolean destrezaActive = false;
 
     //Strings
     private static final String ID = ThornsMod.makeID("ThornsCharacter"); //This should match whatever you have in the CharacterStrings.json file
@@ -166,7 +171,7 @@ public class ThornsCharacter extends CustomPlayer {
     public AbstractCard getStartCardForEvent() {
         //This card is used for the Gremlin card matching game.
         //It should be a non-strike non-defend starter card, but it doesn't have to be.
-        return new Strike_Red();
+        return new ThornProtection();
     }
 
     /*- Below this is methods that you should *probably* adjust, but don't have to. -*/

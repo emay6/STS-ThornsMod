@@ -20,5 +20,13 @@
       "echoed"
     ],
     "DESCRIPTION": "If the specified condition is met, play this card twice."
+  },
+  {
+    "PROPER_NAME": "Destreza",
+    "NAMES": [
+      "destreza"
+    ],
+    "DESCRIPTION": "Attacks deal double damage. #b25% of damage dealt will apply to all enemies. The first time you enter this #yMode in a combat, exit it at the start of your next turn."
+
   }
 ]
