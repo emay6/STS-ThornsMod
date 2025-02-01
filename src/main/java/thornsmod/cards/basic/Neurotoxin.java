@@ -1,16 +1,21 @@
-package thornsmod.cards;
+package thornsmod.cards.basic;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import thornsmod.ThornsMod;
+import thornsmod.cards.EchoCard;
 import thornsmod.character.ThornsCharacter;
+import thornsmod.powers.CorrosionPower;
 import thornsmod.util.CardStats;
 
-public class StrikeThorns extends BaseCard {
-    public static final String ID = makeID(StrikeThorns.class.getSimpleName());
+public class Neurotoxin extends EchoCard {
+    public static final String ID = makeID(Neurotoxin.class.getSimpleName());
 
     // basic card info
     private static final CardStats info = new CardStats(
@@ -20,26 +25,34 @@ public class StrikeThorns extends BaseCard {
             CardTarget.ENEMY,
             1
     );
-    private static final int DMG = 6;
-    private static final int UPG_DMG = 3;
+    private static final int DMG = 3;
+    private static final int MAGIC = 3;
+    private static final int UPG_COST = 1;
 
-    public StrikeThorns() {
+    public Neurotoxin() {
         super(ID, info);
 
-        setDamage(DMG, UPG_DMG);
-
-        tags.add(CardTags.STARTER_STRIKE);
-        tags.add(CardTags.STRIKE);
+        setDamage(DMG);
+        setMagic(MAGIC);
+        setCostUpgrade(UPG_COST);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+        addToBot(new ApplyPowerAction(m, p, new CorrosionPower(m, p, this.magicNumber)));
+
+        if (this.cardDoEcho) this.echo(p, m);
+    }
+
+    public void triggerOnGlowCheck() {
+        this.setCardDoEcho(AbstractDungeon.player.stance.ID.equals(ThornsMod.makeID("ThornsMode")));
+        this.setEchoGlow();
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new StrikeThorns();
+        return new Neurotoxin();
     }
 
 }

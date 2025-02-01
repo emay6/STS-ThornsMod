@@ -10,5 +10,9 @@
   "${modID}:ThornProtection": {
     "NAME": "Thorn Protection",
     "DESCRIPTION": "Enter ${modID}:Thorns."
+  },
+  "${modID}:Neurotoxin": {
+    "NAME": "Neurotoxin",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! ${modID}:Corrosion. NL ${modID}:Echo if in ${modID}:Thorns."
   }
 }

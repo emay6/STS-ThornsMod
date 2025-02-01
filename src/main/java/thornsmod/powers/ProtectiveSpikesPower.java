@@ -15,7 +15,7 @@ public class ProtectiveSpikesPower extends BasePower {
     private static final int THORNS_AMT = 3;
 
     public ProtectiveSpikesPower(AbstractCreature owner) {
-        super(POWER_ID, PowerType.BUFF, false, owner, 1);
+        super(POWER_ID, PowerType.BUFF, false, owner, -1);
         this.description = powerStrings.DESCRIPTIONS[0];
     }
 

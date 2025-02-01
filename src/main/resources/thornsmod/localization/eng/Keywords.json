@@ -5,5 +5,20 @@
       "thorns"
     ],
     "DESCRIPTION": "Upon entering this #yMode, gain 10 Block and #yProtective #ySpikes. Upon playing an Attack, exit this #yMode."
+  },
+  {
+    "PROPER_NAME": "Corrosion",
+    "NAMES": [
+      "corrosion"
+    ],
+    "DESCRIPTION": "Corroded creatures lose HP at the start of their turn. Each turn, Corrosion is reduced by #bhalf."
+  },
+  {
+    "PROPER_NAME": "Echo",
+    "NAMES": [
+      "echo",
+      "echoed"
+    ],
+    "DESCRIPTION": "If the specified condition is met, play this card twice."
   }
 ]

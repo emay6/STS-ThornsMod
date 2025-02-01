@@ -1,43 +1,46 @@
-package thornsmod.cards;
+package thornsmod.cards.basic;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import thornsmod.cards.BaseCard;
 import thornsmod.character.ThornsCharacter;
-import thornsmod.modes.ThornsMode;
 import thornsmod.util.CardStats;
 
-public class ThornProtection extends BaseCard {
-    public static final String ID = makeID(ThornProtection.class.getSimpleName());
+public class StrikeThorns extends BaseCard {
+    public static final String ID = makeID(StrikeThorns.class.getSimpleName());
 
     // basic card info
     private static final CardStats info = new CardStats(
             ThornsCharacter.Meta.CARD_COLOR,
-            CardType.SKILL,
+            CardType.ATTACK,
             CardRarity.BASIC,
-            CardTarget.SELF,
-            2
+            CardTarget.ENEMY,
+            1
     );
-    private static final int UPG_COST = 1;
+    private static final int DMG = 6;
+    private static final int UPG_DMG = 3;
 
-    public ThornProtection() {
+    public StrikeThorns() {
         super(ID, info);
 
-        setCostUpgrade(UPG_COST);
+        setDamage(DMG, UPG_DMG);
+
+        tags.add(CardTags.STARTER_STRIKE);
+        tags.add(CardTags.STRIKE);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ChangeStanceAction(new ThornsMode()));
+        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new ThornProtection();
+        return new StrikeThorns();
     }
 
 }

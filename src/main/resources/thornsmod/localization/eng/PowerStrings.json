@@ -2,7 +2,15 @@
   "${modID}:ProtectiveSpikes": {
     "NAME": "Protective Spikes",
     "DESCRIPTIONS": [
-      "When attacked, deal 3 damage back. Wears off upon exiting Thorns."
+      "When attacked, deal #b3 damage back. Wears off upon exiting #yThorns."
+    ]
+  },
+  "${modID}:Corrosion": {
+    "NAME": "Corrosion",
+    "DESCRIPTIONS": [
+      "At the start of your turn, lose #b",
+      "At the start of its turn, loses #b",
+      " HP, then reduce #yCorrosion by #bhalf."
     ]
   }
 }
