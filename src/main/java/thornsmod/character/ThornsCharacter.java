@@ -18,13 +18,14 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.relics.BurningBlood;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.relics.PrismaticShard;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import thornsmod.ThornsMod;
 import thornsmod.cards.basic.DefendThorns;
 import thornsmod.cards.basic.Neurotoxin;
 import thornsmod.cards.basic.StrikeThorns;
 import thornsmod.cards.basic.ThornProtection;
+import thornsmod.relics.AncestralWavesRelic;
 
 import java.util.ArrayList;
 
@@ -162,7 +163,8 @@ public class ThornsCharacter extends CustomPlayer {
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
         //IDs of starting relics. You can have multiple, but one is recommended.
-        retVal.add(BurningBlood.ID);
+        retVal.add(AncestralWavesRelic.ID);
+        retVal.add(PrismaticShard.ID); // temp for testing
 
         return retVal;
     }

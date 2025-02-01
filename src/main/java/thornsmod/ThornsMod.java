@@ -6,6 +6,7 @@ import basemod.interfaces.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import thornsmod.cards.BaseCard;
 import thornsmod.character.ThornsCharacter;
+import thornsmod.relics.AncestralWavesRelic;
 import thornsmod.util.GeneralUtils;
 import thornsmod.util.KeywordInfo;
 import thornsmod.util.TextureLoader;
@@ -36,6 +37,7 @@ public class ThornsMod implements
         PostInitializeSubscriber,
         EditCharactersSubscriber,
         EditCardsSubscriber,
+        EditRelicsSubscriber,
         AddAudioSubscriber,
         OnStartBattleSubscriber {
     public static ModInfo info;
@@ -261,5 +263,10 @@ public class ThornsMod implements
         ThornsCharacter.destrezaAttackCounter = 0;
         ThornsCharacter.timesDestrezaEntered = 0;
         ThornsCharacter.destrezaActive = false;
+    }
+
+    @Override
+    public void receiveEditRelics() {
+        BaseMod.addRelicToCustomPool(new AncestralWavesRelic(), ThornsCharacter.Meta.CARD_COLOR);
     }
 }

@@ -1,9 +1,10 @@
 {
-  "${modID}:RelicID": {
-    "NAME": "Good Relic",
-    "FLAVOR": "Flavor text displayed in detailed relic view.",
+  "${modID}:AncestralWavesRelic": {
+    "NAME": "Ancestral Waves",
+    "FLAVOR": "You can hear the lingering echoes of your ancestors in the waves.",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. [E] is an energy icon."
+      "Upon exiting a non-combat room, heal #b",
+      " HP."
     ]
   }
 }

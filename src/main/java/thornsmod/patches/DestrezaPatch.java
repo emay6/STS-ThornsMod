@@ -149,7 +149,7 @@ public class DestrezaPatch {
 
         @SpirePostfixPatch
         public static void Postfix(AbstractPlayer __instance) {
-            if (__instance instanceof ThornsCharacter && AbstractDungeon.player != null) {
+            if (__instance instanceof ThornsCharacter && AbstractDungeon.player != null && DestrezaPatch.destrezaBar != null) {
                 DestrezaPatch.destrezaBar.update();
                 //DestrezaPatch.updateDestrezaHoverFade();
             }
@@ -205,7 +205,7 @@ public class DestrezaPatch {
                             FontHelper.renderFontCentered(sb, FontHelper.healthInfoFont, ThornsCharacter.destrezaAttackCounter + "/" + ThornsCharacter.DESTREZA_COST, __instance.hb.cX, y + DestrezaPatch.TEXT_OFFSET_Y, spTextColor);
                         }*/
 
-                        if (DestrezaPatch.destrezaBar.hovered) {
+                        if (DestrezaPatch.destrezaBar.hovered && !AbstractDungeon.isScreenUp) {
                             if (!ThornsCharacter.destrezaActive) {
                                 TipHelper.renderGenericTip(__instance.hb.cX + __instance.hb.width / 2.0F + TIP_OFFSET_R_X, __instance.hb.cY + TIP_OFFSET_Y, uiStrings.TEXT[0], uiStrings.TEXT[1] + ThornsCharacter.destrezaAttackCounter + uiStrings.TEXT[2]);
                             } else {
