@@ -32,5 +32,13 @@
   "${modID}:BarbedAssault": {
     "NAME": "Barbed Assault",
     "DESCRIPTION": "Lose all Thorns. For every 1 Thorns lost, deal !D! damage. Exhaust."
+  },
+  "${modID}:AlchemicalProwess": {
+    "NAME": "Alchemical Prowess",
+    "DESCRIPTION": "{@@}This turn, your next {!M!|<1,>1=!M!} Attack{!M!|<1,>1=s} will apply ${modID}:Corrosion equal to the unblocked damage dealt."
+  },
+  "${modID}:SupremeArts": {
+    "NAME": "Supreme Arts",
+    "DESCRIPTION": "Deal !D! damage. NL ${modID}:Echo if in ${modID}:Destreza."
   }
 }

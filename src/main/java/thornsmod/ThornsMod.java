@@ -250,7 +250,7 @@ public class ThornsMod implements
 
     @Override
     public void receiveAddAudio() {
-        BaseMod.addAudio(makeID("MODE_ENTER_THORNS"), sfxPath("ThornsEnter.ogg"));
+        BaseMod.addAudio(makeID("SKILL_ACTIVATE"), sfxPath("ThornsEnter.ogg"));
         BaseMod.addAudio(makeID("MODE_ENTER_DESTREZA"), sfxPath("DestrezaEnter.ogg"));
         BaseMod.addAudio(makeID("POWER_CORROSION"), sfxPath("CorrosionApply.ogg"));
         BaseMod.addAudio(makeID("ECHO_ACTIVATE"), sfxPath("EchoActivate.ogg"));

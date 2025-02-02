@@ -64,6 +64,7 @@ public class DestrezaMode extends AbstractStance {
     }
 
     public void onEnterStance() {
+        CardCrawlGame.sound.play(ThornsMod.makeID("SKILL_ACTIVATE"));
         CardCrawlGame.sound.play(ThornsMod.makeID("MODE_ENTER_DESTREZA"));
 
         // also stolen from watcher stance

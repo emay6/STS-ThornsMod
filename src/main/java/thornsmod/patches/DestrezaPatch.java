@@ -31,7 +31,7 @@ import thornsmod.modes.DestrezaMode;
 public class DestrezaPatch {
     public static AbstractPlayer playerRender;
     public static Hitbox destrezaBar;
-    //public static float hideSPTimer;
+    public static float hideSPTimer;
 
     private static final UIStrings uiStrings;
     public static final float BAR_Y_OFFSET_DIST;
@@ -49,7 +49,7 @@ public class DestrezaPatch {
 
     public DestrezaPatch() {}
 
-    /*private static void updateDestrezaHoverFade() {
+    private static void updateDestrezaHoverFade() {
         if (DestrezaPatch.destrezaBar.hovered) {
             DestrezaPatch.hideSPTimer -= Gdx.graphics.getDeltaTime() * 4.0F;
             if (DestrezaPatch.hideSPTimer < 0.2F) {
@@ -61,11 +61,11 @@ public class DestrezaPatch {
                 DestrezaPatch.hideSPTimer = 1.0F;
             }
         }
-    }*/
+    }
 
     static {
         uiStrings = CardCrawlGame.languagePack.getUIString(ThornsMod.makeID("DestrezaBar"));
-        BAR_Y_OFFSET_DIST = 8.0f * Settings.scale;
+        BAR_Y_OFFSET_DIST = 9.0f * Settings.scale;
         BAR_HEIGHT = 16.0f * Settings.scale;
         BG_OFFSET_X = 31.0f * Settings.scale;
         TEXT_OFFSET_Y = -23.0f * Settings.scale;
@@ -151,7 +151,7 @@ public class DestrezaPatch {
         public static void Postfix(AbstractPlayer __instance) {
             if (__instance instanceof ThornsCharacter && AbstractDungeon.player != null && DestrezaPatch.destrezaBar != null) {
                 DestrezaPatch.destrezaBar.update();
-                //DestrezaPatch.updateDestrezaHoverFade();
+                DestrezaPatch.updateDestrezaHoverFade();
             }
         }
     }
@@ -199,17 +199,18 @@ public class DestrezaPatch {
                         sb.draw(ImageMaster.HEALTH_BAR_B, x, y - DestrezaPatch.BG_OFFSET_X + 3.0F * Settings.scale, barValue, DestrezaPatch.BAR_HEIGHT);
                         sb.draw(ImageMaster.HEALTH_BAR_R, x + barValue, y - DestrezaPatch.BG_OFFSET_X + 3.0F * Settings.scale, DestrezaPatch.BAR_HEIGHT, DestrezaPatch.BAR_HEIGHT);
 
-                        /*Color spTextColor = Color.WHITE.cpy();
+                        Color spTextColor = Color.WHITE.cpy();
                         spTextColor.a = DestrezaPatch.hideSPTimer;
                         if (!ThornsCharacter.destrezaActive) {
                             FontHelper.renderFontCentered(sb, FontHelper.healthInfoFont, ThornsCharacter.destrezaAttackCounter + "/" + ThornsCharacter.DESTREZA_COST, __instance.hb.cX, y + DestrezaPatch.TEXT_OFFSET_Y, spTextColor);
-                        }*/
+                        }
 
                         if (DestrezaPatch.destrezaBar.hovered && !AbstractDungeon.isScreenUp) {
                             if (!ThornsCharacter.destrezaActive) {
-                                TipHelper.renderGenericTip(__instance.hb.cX + __instance.hb.width / 2.0F + TIP_OFFSET_R_X, __instance.hb.cY + TIP_OFFSET_Y, uiStrings.TEXT[0], uiStrings.TEXT[1] + ThornsCharacter.destrezaAttackCounter + uiStrings.TEXT[2]);
+                                // TipHelper.renderGenericTip(__instance.hb.cX + __instance.hb.width / 2.0F + TIP_OFFSET_R_X, __instance.hb.cY + TIP_OFFSET_Y, uiStrings.TEXT[0], uiStrings.TEXT[1] + ThornsCharacter.destrezaAttackCounter + uiStrings.TEXT[2]);
+                                TipHelper.renderGenericTip(__instance.hb.cX + __instance.hb.width / 2.0F + TIP_OFFSET_R_X, __instance.hb.cY + TIP_OFFSET_Y, uiStrings.TEXT[0], uiStrings.TEXT[1]);
                             } else {
-                                TipHelper.renderGenericTip(__instance.hb.cX + __instance.hb.width / 2.0F + TIP_OFFSET_R_X, __instance.hb.cY + TIP_OFFSET_Y, uiStrings.TEXT[0], ThornsCharacter.timesDestrezaEntered <= 1 ? uiStrings.TEXT[3] : uiStrings.TEXT[4]);
+                                TipHelper.renderGenericTip(__instance.hb.cX + __instance.hb.width / 2.0F + TIP_OFFSET_R_X, __instance.hb.cY + TIP_OFFSET_Y, uiStrings.TEXT[0], ThornsCharacter.timesDestrezaEntered <= 1 ? uiStrings.TEXT[2] : uiStrings.TEXT[3]);
                             }
                         }
                     }

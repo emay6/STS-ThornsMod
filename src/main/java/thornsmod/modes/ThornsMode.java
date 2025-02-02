@@ -52,7 +52,7 @@ public class ThornsMode extends AbstractStance {
     }
 
     public void onEnterStance() {
-        CardCrawlGame.sound.play(ThornsMod.makeID("MODE_ENTER_THORNS"));
+        CardCrawlGame.sound.play(ThornsMod.makeID("SKILL_ACTIVATE"));
 
         // also stolen from calm stance
         AbstractDungeon.effectsQueue.add(new BorderFlashEffect(Color.SKY, true));

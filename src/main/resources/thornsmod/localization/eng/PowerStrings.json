@@ -12,5 +12,13 @@
       "At the start of its turn, loses #b",
       " HP, then reduce #yCorrosion by #bhalf."
     ]
+  },
+  "${modID}:AlchemicalProwessPower": {
+    "NAME": "Alchemical Prowess",
+    "DESCRIPTIONS": [
+      "Your next #yAttack will apply #yCorrosion equal to the unblocked damage dealt.",
+      "Your next ",
+      " #yAttacks will apply #yCorrosion equal to the unblocked damage dealt."
+    ]
   }
 }

@@ -2,8 +2,7 @@
   "${modID}:DestrezaBar": {
     "TEXT": [
       "La Destreza",
-      "#yCurrent #ySP: #b",
-      " NL Playing an #yAttack while not in #yDestreza will accumulate #b1 SP. Upon reaching #b15 SP, enter #yDestreza.",
+      "Playing an #yAttack while not in #yDestreza will accumulate #b1 SP. Upon reaching #b15 SP, enter #yDestreza.",
       "#yDestreza will last until the start of your next turn.",
       "#yDestreza will last until the end of combat."
     ]

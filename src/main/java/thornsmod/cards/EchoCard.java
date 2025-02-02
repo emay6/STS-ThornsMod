@@ -39,7 +39,7 @@ public abstract class EchoCard extends BaseCard {
     }
 
     private void doEcho(AbstractCreature target) {
-        if (!this.purgeOnUse && !target.isDying) {
+        if (!this.purgeOnUse && !target.isDying && !target.isDeadOrEscaped() && !target.halfDead) {
             AbstractMonster m = null;
             if (this.target != null) {
                 m = (AbstractMonster) target;
