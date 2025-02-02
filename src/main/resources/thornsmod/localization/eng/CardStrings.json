@@ -61,5 +61,13 @@
   "${modID}:EnfeeblingMixture": {
     "NAME": "Enfeebling Mixture",
     "DESCRIPTION": "Deal !D! damage. Apply !M! Weak. NL ${modID}:Echo if enemy intends to attack."
+  },
+  "${modID}:ChemicalSpill": {
+    "NAME": "Chemical Spill",
+    "DESCRIPTION": "Apply !M! {modID}:Corrosion to ALL enemies. Lose 2 Dexterity."
+  },
+  "${modID}:DefensiveGambit": {
+    "NAME": "Defensive Gambit",
+    "DESCRIPTION": "Gain 2 Energy on your next turn. NL ${modID}:Echo if in ${modID}:Thorns."
   }
 }
