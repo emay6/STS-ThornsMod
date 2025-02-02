@@ -40,6 +40,7 @@
   "${modID}:SupremeArts": {
     "NAME": "Supreme Arts",
     "DESCRIPTION": "Deal !D! damage. NL ${modID}:Echo if in ${modID}:Destreza."
+  },
   "${modID}:CleaveTheTide": {
     "NAME": "Cleave the Tide",
     "DESCRIPTION": "Can only be played if you are in ${modID}:Thorns. Deal !D! damage to ALL enemies.",

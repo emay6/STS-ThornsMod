@@ -45,12 +45,17 @@ public class EnfeeblingMixture extends EchoCard {
     }
 
     public void triggerOnGlowCheck() {
+        boolean setEcho = false;
 
-        for(AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            this.setCardDoEcho(!m.isDeadOrEscaped() && m.getIntentBaseDmg() >= 0);
-            this.setEchoGlow();
-            break;
+        for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
+            if (!m.isDeadOrEscaped() && (m.intent == AbstractMonster.Intent.ATTACK || m.intent == AbstractMonster.Intent.ATTACK_BUFF || m.intent == AbstractMonster.Intent.ATTACK_DEBUFF || m.intent == AbstractMonster.Intent.ATTACK_DEFEND)) {
+                setEcho = true;
+                break;
+            }
         }
+
+        this.setCardDoEcho(setEcho);
+        this.setEchoGlow();
     }
 
     @Override
