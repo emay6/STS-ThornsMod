@@ -18,5 +18,19 @@
   "${modID}:Destreza": {
     "NAME": "Destreza",
     "DESCRIPTION": "Enter ${modID}:Destreza."
+  },
+  "${modID}:Accelerant": {
+    "NAME": "Accelerant",
+    "DESCRIPTION": "Double ${modID}:Corrosion. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Double ${modID}:Corrosion."
+  },
+  "${modID}:CastOff": {
+    "NAME": "Cast Off",
+    "DESCRIPTION": "Choose up to 1 card in your hand to Retain.",
+    "UPGRADE_DESCRIPTION": "Choose up to 2 cards in your hand to Retain."
+  },
+  "${modID}:BarbedAssault": {
+    "NAME": "Barbed Assault",
+    "DESCRIPTION": "Lose all Thorns. For every 1 Thorns lost, deal !D! damage. Exhaust."
   }
 }
