@@ -1,0 +1,68 @@
+package thornsmod.cards.rare;
+
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import thornsmod.cards.EchoCard;
+import thornsmod.character.ThornsCharacter;
+import thornsmod.util.CardStats;
+
+import java.util.Iterator;
+
+public class CleanCut extends EchoCard {
+    public static final String ID = makeID(CleanCut.class.getSimpleName());
+
+    // basic card info
+    private static final CardStats info = new CardStats(
+            ThornsCharacter.Meta.CARD_COLOR,
+            CardType.ATTACK,
+            CardRarity.RARE,
+            CardTarget.ENEMY,
+            1
+    );
+    private static final int DMG = 6;
+    private static final int UPG_DMG = 1;
+    private static final int MAG = 3;
+    private static final int UPG_MAG = 1;
+
+    public CleanCut() {
+        super(ID, info);
+
+        setDamage(DMG, UPG_DMG);
+        setMagic(MAG, UPG_MAG);
+    }
+
+    @Override
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        for (int i = 0; i < this.magicNumber; ++i) {
+            this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+        }
+    }
+
+    public void triggerOnGlowCheck () {
+        boolean echo = true;
+        Iterator var2 = AbstractDungeon.player.hand.group.iterator();
+
+        while (var2.hasNext()) {
+            AbstractCard c = (AbstractCard) var2.next();
+            if (c.type == CardType.ATTACK && c != this) {
+                break;
+            }
+        }
+
+        if (echo) {
+            this.setCardDoEcho(true);
+            this.setEchoGlow();
+        }
+    }
+
+    @Override
+    public AbstractCard makeCopy() {
+        return new CleanCut();
+    }
+
+}

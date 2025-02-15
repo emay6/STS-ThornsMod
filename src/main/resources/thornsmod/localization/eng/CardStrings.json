@@ -77,7 +77,7 @@
   "${modID}:Futility": {
     "NAME": "Futility",
     "DESCRIPTION": "Apply !M! Vulnerable. NL ${modID}:Echo if the last played card this combat was a Skill. NL Exhaust.",
-    "UPGRADED_DESCRIPTION": "Apply !M! Vulnerable. NL ${modID}:Echo if the last played card this combat was a Skill."
+    "UPGRADE_DESCRIPTION": "Apply !M! Vulnerable. NL ${modID}:Echo if the last played card this combat was a Skill."
   },
   "${modID}:CalmingWaves": {
     "NAME": "Calming Waves",
@@ -85,10 +85,27 @@
   },
   "${modID}:ChemicalSpill": {
     "NAME": "Chemical Spill",
-    "DESCRIPTION": "Apply !M! {modID}:Corrosion to ALL enemies. Lose 2 Dexterity."
+    "DESCRIPTION": "Apply !M! ${modID}:Corrosion to ALL enemies. Lose 2 Dexterity."
   },
   "${modID}:DefensiveGambit": {
     "NAME": "Defensive Gambit",
     "DESCRIPTION": "Gain 2 Energy on your next turn. NL ${modID}:Echo if in ${modID}:Thorns."
+  },
+  "${modID}:CrashingWave": {
+    "NAME": "Crashing Wave",
+    "DESCRIPTION": "Deal !D! damage. ${modID}:Echo if the last played card this combat was an Attack. Shuffle this card into your draw pile."
+  },
+  "${modID}:QuickenedPace": {
+    "NAME": "Quickened Pace",
+    "DESCRIPTION": "Gain Energy for each enemy in combat. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Gain Energy for each enemy in combat. Exhaust."
+  },
+  "${modID}:PreciseDose": {
+    "NAME": "Precise Dose",
+    "DESCRIPTION": "Gain !M! ${modID}:Corrosion. NL Gain 2 Energy. NL Draw 2 cards."
+  },
+  "${modID}:CleanCut": {
+    "NAME": "Clean Cut",
+    "DESCRIPTION": "Deal !D! damage !M! times. NL ${modID}:Echo if this is the only Attack in your hand."
   }
 }
