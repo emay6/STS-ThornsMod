@@ -1,50 +1,55 @@
 package thornsmod.cards.common;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import thornsmod.actions.FatalEchoAction;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
+import thornsmod.ThornsMod;
+import thornsmod.cards.BaseCard;
 import thornsmod.cards.EchoCard;
 import thornsmod.character.ThornsCharacter;
 import thornsmod.util.CardStats;
 
-public class FatalEcho extends EchoCard {
-    public static final String ID = makeID(FatalEcho.class.getSimpleName());
+public class Futility extends EchoCard {
+    public static final String ID = makeID(Futility.class.getSimpleName());
 
     // basic card info
     private static final CardStats info = new CardStats(
             ThornsCharacter.Meta.CARD_COLOR,
-            CardType.ATTACK,
+            CardType.SKILL,
             CardRarity.COMMON,
-            CardTarget.ALL_ENEMY,
+            CardTarget.ENEMY,
             1
     );
-    private static final int DAMAGE = 7;
-    private static final int UPG_DAMAGE = 3;
+    private static final int MAGIC = 1;
 
-    public FatalEcho() {
+    public Futility() {
         super(ID, info);
-        this.isMultiDamage = true;
 
-        setDamage(DAMAGE, UPG_DAMAGE);
+        setMagic(MAGIC);
+        setExhaust(true, false);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new FatalEchoAction(p, this));
+        addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, 1, false)));
+
+        if (this.cardDoEcho) this.echo(p, m);
     }
 
     public void triggerOnGlowCheck() {
-        // cant really easily have a glow check for fatal, so no glow and just do check in action
+        this.setCardDoEcho(!AbstractDungeon.actionManager.cardsPlayedThisCombat.isEmpty() && ((AbstractCard)AbstractDungeon.actionManager.cardsPlayedThisCombat.get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 1)).type == CardType.SKILL);
+        this.setEchoGlow();
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new FatalEcho();
+        return new Futility();
     }
 
 }

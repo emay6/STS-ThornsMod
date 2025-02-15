@@ -43,23 +43,44 @@
   },
   "${modID}:CleaveTheTide": {
     "NAME": "Cleave the Tide",
-    "DESCRIPTION": "Can only be played if you are in ${modID}:Thorns. Deal !D! damage to ALL enemies.",
-    "UPGRADE_DESCRIPTION": "Retain. Can only be played if you are in ${modID}:Thorns. Deal !D! damage to ALL enemies."
+    "DESCRIPTION": "Can only be played if you are in ${modID}:Thorns. NL Deal !D! damage to ALL enemies.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Can only be played if you are in ${modID}:Thorns. NL Deal !D! damage to ALL enemies."
   },
   "${modID}:CorrosiveStab": {
     "NAME": "Corrosive Stab",
-    "DESCRIPTION": "Deal !D! damage. Apply !M! ${modID}:Corrosion."
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! ${modID}:Corrosion."
   },
   "${modID}:Efficiency": {
     "NAME": "Efficiency",
-    "DESCRIPTION": "Deal !D! damage. Gain !B! Block. Draw 1 card."
+    "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block. NL Draw 1 card."
   },
   "${modID}:EnGarde": {
     "NAME": "En Garde",
-    "DESCRIPTION": "Retain. Enter ${modID}:Thorns. Exhaust."
+    "DESCRIPTION": "Retain. NL Enter ${modID}:Thorns. NL Exhaust."
   },
   "${modID}:EnfeeblingMixture": {
     "NAME": "Enfeebling Mixture",
-    "DESCRIPTION": "Deal !D! damage. Apply !M! Weak. NL ${modID}:Echo if enemy intends to attack."
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak. NL ${modID}:Echo if enemy intends to attack."
+  },
+  "${modID}:FatalEcho": {
+    "NAME": "Fatal Echo",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL ${modID}:Echo if any enemy is killed."
+  },
+  "${modID}:Feint": {
+    "NAME": "Feint",
+    "DESCRIPTION": "Deal !D! damage. NL Discard !M! card. NL Draw !M! card."
+  },
+  "${modID}:FlurryOfNeedles": {
+    "NAME": "Flurry of Needles",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies twice. NL ${modID}:Echo if there is only one enemy."
+  },
+  "${modID}:Futility": {
+    "NAME": "Futility",
+    "DESCRIPTION": "Apply !M! Vulnerable. NL ${modID}:Echo if the last played card this combat was a Skill. NL Exhaust.",
+    "UPGRADED_DESCRIPTION": "Apply !M! Vulnerable. NL ${modID}:Echo if the last played card this combat was a Skill."
+  },
+  "${modID}:CalmingWaves": {
+    "NAME": "Calming Waves",
+    "DESCRIPTION": "Whenever you ${modID}:Echo, gain !M! Block."
   }
 }

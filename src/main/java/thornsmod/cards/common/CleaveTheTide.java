@@ -29,6 +29,7 @@ public class CleaveTheTide extends BaseCard {
         super(ID, info);
 
         setDamage(DMG);
+        setSelfRetain(false, true);
     }
 
     @Override
@@ -45,15 +46,6 @@ public class CleaveTheTide extends BaseCard {
             return false;
         } else {
             return canUse;
-        }
-    }
-
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.retain = true;
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-            this.initializeDescription();
         }
     }
 

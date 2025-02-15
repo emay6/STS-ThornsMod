@@ -41,7 +41,7 @@ public class CorrosionLoseHpAction extends AbstractGameAction {
 
                 AbstractPower p = this.target.getPower(ThornsMod.makeID("Corrosion"));
                 if (p != null) {
-                    p.amount = p.amount / 2;
+                    p.amount /= 2;
                     if (p.amount == 0) {
                         this.target.powers.remove(p);
                     } else {

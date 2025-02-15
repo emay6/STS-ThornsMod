@@ -10,19 +10,34 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thornsmod.EchoTag;
 import thornsmod.ThornsMod;
+import thornsmod.cards.EchoCard;
 
 public class EchoEffectAction extends AbstractGameAction {
-    private AbstractCard card;
+    private EchoCard card;
+    private boolean targetAll;
 
-    public EchoEffectAction(AbstractCreature target, AbstractCard card) {
+    public EchoEffectAction(AbstractCreature target, EchoCard card, boolean targetAll) {
         this.target = target;
         this.card = card;
-
         this.actionType = ActionType.SPECIAL;
+        this.targetAll = targetAll;
     }
 
     public void update() {
-        if (target != null && !card.purgeOnUse && !target.isDying && !target.isDeadOrEscaped() && !target.halfDead) {
+        if (this.card.hasTag(EchoTag.ECHOED_CARD)) {
+            this.isDone = true;
+            return;
+        }
+
+        if (targetAll || (target != null && !card.purgeOnUse && !target.isDeadOrEscaped() && !target.halfDead)) {
+
+            if (targetAll) {
+                if (AbstractDungeon.getCurrRoom().monsters.haveMonstersEscaped() || AbstractDungeon.getCurrRoom().monsters.areMonstersDead()) {
+                    this.isDone = true;
+                    return;
+                }
+            }
+
             AbstractCard echoCard = card.makeSameInstanceOf();
             AbstractDungeon.player.limbo.addToBottom(echoCard);
             echoCard.current_x = card.current_x;

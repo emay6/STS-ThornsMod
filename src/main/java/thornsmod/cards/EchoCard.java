@@ -24,12 +24,14 @@ public abstract class EchoCard extends BaseCard {
             target = p;
         }
 
+        boolean targetAll = m == null && target == null;
+
         // TODO: re-add reverberation functionality when implemented
         if (false/*AbstractDungeon.player.hasPower(ThornsMod.makeID("Reverberation"))*/) {
-            AbstractDungeon.actionManager.addToBottom(new EchoEffectAction(target, this));
-            AbstractDungeon.actionManager.addToBottom(new EchoEffectAction(target, this));
+            AbstractDungeon.actionManager.addToBottom(new EchoEffectAction(target, this, targetAll));
+            AbstractDungeon.actionManager.addToBottom(new EchoEffectAction(target, this, targetAll));
         } else {
-            AbstractDungeon.actionManager.addToBottom(new EchoEffectAction(target, this));
+            AbstractDungeon.actionManager.addToBottom(new EchoEffectAction(target, this, targetAll));
         }
     }
 

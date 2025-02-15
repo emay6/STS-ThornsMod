@@ -24,8 +24,8 @@ public class EnGarde extends BaseCard {
 
     public EnGarde() {
         super(ID, info);
-        this.retain = true;
-        this.exhaust = true;
+        setSelfRetain(true);
+        setExhaust(true);
         setCostUpgrade(UPG_COST);
     }
 
