@@ -82,7 +82,6 @@
   "${modID}:CalmingWaves": {
     "NAME": "Calming Waves",
     "DESCRIPTION": "Whenever you ${modID}:Echo, gain !M! Block."
-    "DESCRIPTION": "Deal !D! damage. Apply !M! Weak. NL ${modID}:Echo if enemy intends to attack."
   },
   "${modID}:ChemicalSpill": {
     "NAME": "Chemical Spill",

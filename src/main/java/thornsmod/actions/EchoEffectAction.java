@@ -29,6 +29,11 @@ public class EchoEffectAction extends AbstractGameAction {
             return;
         }
 
+        AbstractMonster m = null;
+        if (this.target != null && this.target instanceof AbstractMonster) {
+            m = (AbstractMonster) this.target;
+        }
+
         if (targetAll || (target != null && !card.purgeOnUse && !target.isDeadOrEscaped() && !target.halfDead)) {
 
             if (targetAll) {
@@ -46,10 +51,11 @@ public class EchoEffectAction extends AbstractGameAction {
             echoCard.target_y = (float) Settings.HEIGHT / 2.0f;
             // use for echo-related effects
             echoCard.tags.add(EchoTag.ECHOED_CARD);
-            echoCard.calculateCardDamage((AbstractMonster) target);
+            if (m != null)
+                echoCard.calculateCardDamage(m);
 
             echoCard.purgeOnUse = true;
-            AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(echoCard, (AbstractMonster) target, card.energyOnUse, true, true), true);
+            AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(echoCard, m, card.energyOnUse, true, true), true);
             AbstractDungeon.actionManager.addToBottom(new SFXAction(ThornsMod.makeID("ECHO_ACTIVATE")));
         }
 
