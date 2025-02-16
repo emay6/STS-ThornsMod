@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import thornsmod.ThornsMod;
 import thornsmod.cards.EchoCard;
 import thornsmod.character.ThornsCharacter;
 import thornsmod.util.CardStats;
@@ -41,6 +42,8 @@ public class CleanCut extends EchoCard {
         for (int i = 0; i < this.magicNumber; ++i) {
             this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         }
+
+        if (this.cardDoEcho) this.echo(p, m);
     }
 
     public void triggerOnGlowCheck () {
@@ -50,6 +53,7 @@ public class CleanCut extends EchoCard {
         while (var2.hasNext()) {
             AbstractCard c = (AbstractCard) var2.next();
             if (c.type == CardType.ATTACK && c != this) {
+                echo = false;
                 break;
             }
         }
@@ -57,6 +61,9 @@ public class CleanCut extends EchoCard {
         if (echo) {
             this.setCardDoEcho(true);
             this.setEchoGlow();
+        } else {
+            this.setCardDoEcho(false);
+            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         }
     }
 

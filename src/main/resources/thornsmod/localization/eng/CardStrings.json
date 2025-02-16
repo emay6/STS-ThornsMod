@@ -107,5 +107,22 @@
   "${modID}:CleanCut": {
     "NAME": "Clean Cut",
     "DESCRIPTION": "Deal !D! damage !M! times. NL ${modID}:Echo if this is the only Attack in your hand."
+  },
+  "${modID}:ShoreUp": {
+    "NAME": "Shore Up",
+    "DESCRIPTION": "Gain !B! Block. NL ${modID}:Echo if you have no Block."
+  },
+  "${modID}:MindStream": {
+    "NAME": "Mind Stream",
+    "DESCRIPTION": "Gain 1 Energy. Draw 1 card. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain 1 Energy. Draw 2 cards. Exhaust."
+  },
+  "${modID}:MomentousStrike": {
+    "NAME": "Momentous Strike",
+    "DESCRIPTION": "Deal !D! damage. NL ${modID}:Echo if the last card played this combat was an Attack."
+  },
+  "${modID}:Oxidize": {
+    "NAME": "Oxidize",
+    "DESCRIPTION": "Apply !M! ${modID}:Corrosion. NL ${modID}:Echo if the enemy has ${modID}:Corrosion."
   }
 }
