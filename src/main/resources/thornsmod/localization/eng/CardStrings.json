@@ -124,5 +124,19 @@
   "${modID}:Oxidize": {
     "NAME": "Oxidize",
     "DESCRIPTION": "Apply !M! ${modID}:Corrosion. NL ${modID}:Echo if the enemy has ${modID}:Corrosion."
+  },
+  "${modID}:SuddenStrike": {
+    "NAME": "Sudden Strike",
+    "DESCRIPTION": "Unplayable. NL When you draw this card, deal !D! damage to a random enemy, draw !M! card, and Exhaust.",
+    "UPGRADE_DESCRIPTION": "Unplayable. NL When you draw this card, deal !D! damage to a random enemy, draw !M! cards, and Exhaust."
+  },
+  "${modID}:VictoryRush": {
+    "NAME": "Victory Rush",
+    "DESCRIPTION": "Deal !D! damage. Decrease the damage of this card by 2 this combat.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Deal !D! damage. Decrease the damage of this card by 2 this combat."
+  },
+  "${modID}:AncestralHealing": {
+    "NAME": "Ancestral Healing",
+    "DESCRIPTION": "At the end of your turn, if you did not play any Attacks, heal !M! HP."
   }
 }

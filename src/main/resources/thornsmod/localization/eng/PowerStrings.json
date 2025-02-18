@@ -20,5 +20,12 @@
       "Your next ",
       " #yAttacks will apply #yCorrosion equal to the unblocked damage dealt."
     ]
+  },
+  "${modID}:AncestralHealingPower": {
+    "NAME": "Ancestral Healing",
+    "DESCRIPTIONS": [
+      "If you do not play any #yAttacks during your turn, Heal #b",
+      " HP next turn."
+    ]
   }
 }
