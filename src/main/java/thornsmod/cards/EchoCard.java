@@ -36,11 +36,12 @@ public abstract class EchoCard extends BaseCard {
     }
 
     public void setCardDoEcho(boolean trigger) {
-        if (!AbstractDungeon.actionManager.cardsPlayedThisCombat.isEmpty() && trigger) {
+        /*if (!AbstractDungeon.actionManager.cardsPlayedThisCombat.isEmpty() && trigger) {
             this.cardDoEcho = true;
         } else {
             this.cardDoEcho = false;
-        }
+        }*/
+        this.cardDoEcho = trigger;
     }
 
     public void setEchoGlow() {

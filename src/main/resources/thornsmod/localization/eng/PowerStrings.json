@@ -27,5 +27,34 @@
       "If you do not play any #yAttacks during your turn, Heal #b",
       " HP next turn."
     ]
+  },
+  "${modID}:CalmingWavesPower": {
+    "NAME": "Calming Waves",
+    "DESCRIPTIONS": [
+      "When #bEchoing, gain #b",
+      " #yBlock."
+    ]
+  },
+  "${modID}:DenseThornsPower": {
+    "NAME": "Dense Thorns",
+    "DESCRIPTIONS": [
+      "Upon entering #yThorns, gain #b",
+      " extra #yBlock."
+    ]
+  },
+  "${modID}:ExplosionArtsPower": {
+    "NAME": "Explosion Arts",
+    "DESCRIPTIONS": [
+      "When #yCorrosion expires on an enemy, deal #b",
+      " damage to all enemies."
+    ]
+  },
+  "${modID}:FreeSpiritedPower": {
+    "NAME": "Free-spirited",
+    "DESCRIPTIONS": [
+      "Upon exiting #yThorns, draw #b",
+      " card.",
+      " cards."
+    ]
   }
 }

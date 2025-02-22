@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
@@ -23,10 +24,12 @@ import thornsmod.powers.ProtectiveSpikesPower;
 public class ThornsMode extends AbstractStance {
     public static final String MODE_ID = ThornsMod.makeID("ThornsMode");
     private static final StanceStrings modeString;
+    private int baseBlock;
 
     public ThornsMode() {
         this.ID = MODE_ID;
         this.name = modeString.NAME;
+        this.baseBlock = 10;
         this.updateDescription();
     }
 
@@ -58,13 +61,22 @@ public class ThornsMode extends AbstractStance {
         AbstractDungeon.effectsQueue.add(new BorderFlashEffect(Color.SKY, true));
 
         AbstractPlayer player = AbstractDungeon.player;
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, 10));
+        int blockAmt = this.baseBlock;
+
+        if (player.hasPower(ThornsMod.makeID("DenseThornsPower")))
+            blockAmt += player.getPower(ThornsMod.makeID("DenseThornsPower")).amount;
+
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, blockAmt));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new ProtectiveSpikesPower(player)));
     }
 
     public void onExitStance() {
         AbstractPlayer player = AbstractDungeon.player;
         AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(player, player, player.getPower(ThornsMod.makeID("ProtectiveSpikes"))));
+
+        if (player.hasPower(ThornsMod.makeID("FreeSpiritedPower"))) {
+            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(player.getPower(ThornsMod.makeID("FreeSpiritedPower")).amount));
+        }
     }
 
     public void onPlayCard(AbstractCard card) {

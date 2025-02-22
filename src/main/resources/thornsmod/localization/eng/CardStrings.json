@@ -138,5 +138,34 @@
   "${modID}:AncestralHealing": {
     "NAME": "Ancestral Healing",
     "DESCRIPTION": "At the end of your turn, if you did not play any Attacks, heal !M! HP."
+  },
+  "${modID}:DenseThorns": {
+    "NAME": "Dense Thorns",
+    "DESCRIPTION": "Entering ${modID}:Thorns gives !M! more Block. NL Enter ${modID}:Thorns."
+  },
+  "${modID}:Disintegration": {
+    "NAME": "Disintegration",
+    "DESCRIPTION": "Deal damage equal to the amount of ${modID}:Corrosion on the enemy. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal damage equal to the amount of ${modID}:Corrosion on the enemy."
+  },
+  "${modID}:Dissolver": {
+    "NAME": "Dissolver",
+    "DESCRIPTION": "Deal !D! damage. NL ${modID}:Echo if the enemy has Block."
+  },
+  "${modID}:ExplosionArts": {
+    "NAME": "Explosion Arts",
+    "DESCRIPTION": "When ${modID}:Corrosion expires on an enemy, deal !M! damage to all enemies."
+  },
+  "${modID}:FallingTide": {
+    "NAME": "Falling Tide",
+    "DESCRIPTION": "Gain !B! Block. NL ${modID}:Echo if there are no Attacks in your hand."
+  },
+  "${modID}:FreeSpirited": {
+    "NAME": "Free-spirited",
+    "DESCRIPTION": "{@@}Upon exiting ${modID}:Thorns, draw !M! card{!M!|<1,>1=s}."
+  },
+  "${modID}:HonedBlade": {
+    "NAME": "Honed Blade",
+    "DESCRIPTION": "Deal !D! damage. NL For every ${modID}:Echo in this combat, increase damage dealt by !M!."
   }
 }

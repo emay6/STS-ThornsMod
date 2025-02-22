@@ -2,6 +2,7 @@ package thornsmod.actions;
 
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -44,6 +45,9 @@ public class CorrosionLoseHpAction extends AbstractGameAction {
                     p.amount /= 2;
                     if (p.amount == 0) {
                         this.target.powers.remove(p);
+                        if (AbstractDungeon.player.hasPower(ThornsMod.makeID("ExplosionArtsPower"))) {
+                            this.addToTop(new DamageAllEnemiesAction(AbstractDungeon.player, AbstractDungeon.player.getPower(ThornsMod.makeID("ExplosionArtsPower")).amount, DamageInfo.DamageType.THORNS, AttackEffect.FIRE));
+                        }
                     } else {
                         p.updateDescription();
                     }

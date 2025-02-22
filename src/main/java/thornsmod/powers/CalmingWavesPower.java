@@ -18,6 +18,10 @@ public class CalmingWavesPower extends BasePower {
 
     public CalmingWavesPower(AbstractCreature owner, int amount) {
         super(POWER_ID, PowerType.BUFF, false, owner, amount);
+        this.updateDescription();
+    }
+
+    public void updateDescription() {
         this.description = powerStrings.DESCRIPTIONS[0] + this.amount + powerStrings.DESCRIPTIONS[1];
     }
 
