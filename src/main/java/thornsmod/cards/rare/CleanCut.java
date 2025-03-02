@@ -7,12 +7,9 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import thornsmod.ThornsMod;
 import thornsmod.cards.EchoCard;
 import thornsmod.character.ThornsCharacter;
 import thornsmod.util.CardStats;
-
-import java.util.Iterator;
 
 public class CleanCut extends EchoCard {
     public static final String ID = makeID(CleanCut.class.getSimpleName());
@@ -48,10 +45,8 @@ public class CleanCut extends EchoCard {
 
     public void triggerOnGlowCheck () {
         boolean echo = true;
-        Iterator var2 = AbstractDungeon.player.hand.group.iterator();
 
-        while (var2.hasNext()) {
-            AbstractCard c = (AbstractCard) var2.next();
+        for (AbstractCard c : AbstractDungeon.player.hand.group) {
             if (c.type == CardType.ATTACK && c != this) {
                 echo = false;
                 break;

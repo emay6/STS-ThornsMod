@@ -11,8 +11,8 @@ import thornsmod.cards.EchoCard;
 import thornsmod.character.ThornsCharacter;
 import thornsmod.util.CardStats;
 
-public class Dissolver extends EchoCard {
-    public static final String ID = makeID(Dissolver.class.getSimpleName());
+public class IberianTechnique extends EchoCard {
+    public static final String ID = makeID(IberianTechnique.class.getSimpleName());
 
     // basic card info
     private static final CardStats info = new CardStats(
@@ -22,39 +22,31 @@ public class Dissolver extends EchoCard {
             CardTarget.ENEMY,
             1
     );
-    private static final int DAMAGE = 12;
-    private static final int UPG_DAMAGE = 4;
+    private static final int DAMAGE = 5;
+    private static final int UPG_DAMAGE = 3;
 
-    public Dissolver() {
+    public IberianTechnique() {
         super(ID, info);
 
         setDamage(DAMAGE, UPG_DAMAGE);
+        shuffleBackIntoDrawPile = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // disable echo effect if actual target doesn't have block
-        if (m.currentBlock <= 0) {
-            this.setCardDoEcho(false);
-        }
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
 
-        addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SMASH));
         if (this.cardDoEcho) this.echo(p, m);
     }
 
     public void triggerOnGlowCheck() {
-        for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            if (!m.isDeadOrEscaped() && m.currentBlock > 0) {
-                this.setCardDoEcho(true);
-                this.setEchoGlow();
-                break;
-            }
-        }
+        this.setCardDoEcho(!AbstractDungeon.actionManager.cardsPlayedThisCombat.isEmpty() && ((AbstractCard)AbstractDungeon.actionManager.cardsPlayedThisCombat.get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 1)).type == CardType.ATTACK);
+        this.setEchoGlow();
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new Dissolver();
+        return new IberianTechnique();
     }
 
 }

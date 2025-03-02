@@ -5,14 +5,13 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thornsmod.ThornsMod;
-import thornsmod.cards.EchoCard;
+import thornsmod.cards.BaseCard;
 import thornsmod.character.ThornsCharacter;
 import thornsmod.util.CardStats;
 
-public class Disintegration extends EchoCard {
+public class Disintegration extends BaseCard {
     public static final String ID = makeID(Disintegration.class.getSimpleName());
 
     // basic card info

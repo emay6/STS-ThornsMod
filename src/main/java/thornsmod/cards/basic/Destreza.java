@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thornsmod.cards.BaseCard;
 import thornsmod.character.ThornsCharacter;
 import thornsmod.modes.DestrezaMode;
-import thornsmod.modes.ThornsMode;
 import thornsmod.util.CardStats;
 
 // for easier testing destreza

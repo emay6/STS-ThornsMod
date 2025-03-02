@@ -8,11 +8,11 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thornsmod.EchoTag;
-import thornsmod.cards.EchoCard;
+import thornsmod.cards.BaseCard;
 import thornsmod.character.ThornsCharacter;
 import thornsmod.util.CardStats;
 
-public class HonedBlade extends EchoCard {
+public class HonedBlade extends BaseCard {
     public static final String ID = makeID(HonedBlade.class.getSimpleName());
 
     // basic card info

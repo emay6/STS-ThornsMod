@@ -12,8 +12,6 @@ import thornsmod.character.ThornsCharacter;
 import thornsmod.powers.CorrosionPower;
 import thornsmod.util.CardStats;
 
-import java.util.Iterator;
-
 public class ChemicalSpill extends BaseCard {
     public static final String ID = makeID(ChemicalSpill.class.getSimpleName());
 
@@ -40,10 +38,7 @@ public class ChemicalSpill extends BaseCard {
         // Lose 2 dex
         addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, -2), -2));
         // Apply corrosion to all enemies
-        Iterator var3 = AbstractDungeon.getCurrRoom().monsters.monsters.iterator();
-
-        while(var3.hasNext()) {
-            AbstractMonster mo = (AbstractMonster)var3.next();
+        for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
             addToBot(new ApplyPowerAction(mo, p, new CorrosionPower(mo, p, magicNumber), magicNumber, true, AbstractGameAction.AttackEffect.NONE));
         }
     }

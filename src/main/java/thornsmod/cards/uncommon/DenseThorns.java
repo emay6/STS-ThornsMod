@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thornsmod.cards.BaseCard;
 import thornsmod.character.ThornsCharacter;
 import thornsmod.modes.ThornsMode;
-import thornsmod.powers.AncestralHealingPower;
 import thornsmod.powers.DenseThornsPower;
 import thornsmod.util.CardStats;
 

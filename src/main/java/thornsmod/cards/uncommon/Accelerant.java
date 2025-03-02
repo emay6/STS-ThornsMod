@@ -1,15 +1,11 @@
 package thornsmod.cards.uncommon;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import thornsmod.actions.DoubleCorrosionAction;
 import thornsmod.cards.BaseCard;
 import thornsmod.character.ThornsCharacter;
-import thornsmod.powers.CorrosionPower;
 import thornsmod.util.CardStats;
 
 public class Accelerant extends BaseCard {

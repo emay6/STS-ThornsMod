@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thornsmod.ThornsMod;
-import thornsmod.cards.BaseCard;
 import thornsmod.cards.EchoCard;
 import thornsmod.character.ThornsCharacter;
 import thornsmod.util.CardStats;

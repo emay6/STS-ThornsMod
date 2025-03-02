@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thornsmod.cards.BaseCard;
 import thornsmod.character.ThornsCharacter;
 import thornsmod.util.CardStats;
-import java.util.Iterator;
 
 public class QuickenedPace extends BaseCard {
     public static final String ID = makeID(QuickenedPace.class.getSimpleName());
@@ -33,10 +32,8 @@ public class QuickenedPace extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int count = 0;
-        Iterator var4 = AbstractDungeon.getMonsters().monsters.iterator();
 
-        while(var4.hasNext()) {
-            AbstractMonster mon = (AbstractMonster)var4.next();
+        for (AbstractMonster mon : AbstractDungeon.getMonsters().monsters) {
             if (!mon.isDeadOrEscaped()) {
                 ++count;
             }

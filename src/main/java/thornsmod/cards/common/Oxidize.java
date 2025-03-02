@@ -11,8 +11,6 @@ import thornsmod.cards.EchoCard;
 import thornsmod.character.ThornsCharacter;
 import thornsmod.util.CardStats;
 
-import java.util.Iterator;
-
 public class Oxidize extends EchoCard {
     public static final String ID = makeID(Oxidize.class.getSimpleName());
 
@@ -47,10 +45,7 @@ public class Oxidize extends EchoCard {
     }
 
     public void triggerOnGlowCheck() {
-        Iterator var1 = AbstractDungeon.getCurrRoom().monsters.monsters.iterator();
-
-        while(var1.hasNext()) {
-            AbstractMonster m = (AbstractMonster)var1.next();
+        for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
             if (!m.isDeadOrEscaped() && m.hasPower(ThornsMod.makeID("Corrosion"))) {
                 this.setCardDoEcho(true);
                 this.setEchoGlow();

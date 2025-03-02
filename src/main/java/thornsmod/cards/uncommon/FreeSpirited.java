@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thornsmod.cards.BaseCard;
 import thornsmod.character.ThornsCharacter;
-import thornsmod.powers.ExplosionArtsPower;
 import thornsmod.powers.FreeSpiritedPower;
 import thornsmod.util.CardStats;
 

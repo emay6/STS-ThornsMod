@@ -1,6 +1,5 @@
 package thornsmod.actions;
 
-import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -14,7 +13,6 @@ import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 import thornsmod.cards.EchoCard;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class FatalEchoAction extends AbstractGameAction {
     private EchoCard card;
