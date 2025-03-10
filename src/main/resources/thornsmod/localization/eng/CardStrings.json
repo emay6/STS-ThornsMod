@@ -197,5 +197,18 @@
     "NAME": "Iberian Technique",
     "DESCRIPTION": "Deal !D! damage. Put !M! Attack from your discard pile into your hand.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage. Put !M! Attacks from your discard pile into your hand."
+  },
+  "${modID}:Incapacitate": {
+    "NAME": "Incapacitate",
+    "DESCRIPTION": "Apply 8 ${modID}:Corrosion. NL Enemy loses !M! Strength. NL Exhaust."
+  },
+  "${modID}:IntegratedStrategy": {
+    "NAME": "Integrated Strategy",
+    "DESCRIPTION": "If the enemy intends to attack, gain !D! Block. Otherwise, deal !D! damage."
+  },
+  "${modID}:Lodestar": {
+    "NAME": "Lodestar",
+    "DESCRIPTION": "Put 1 card from your draw pile into your hand. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Put 1 card from your draw pile into your hand."
   }
 }
