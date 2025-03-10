@@ -167,5 +167,35 @@
   "${modID}:HonedBlade": {
     "NAME": "Honed Blade",
     "DESCRIPTION": "Deal !D! damage. NL For every ${modID}:Echo in this combat, increase damage dealt by !M!."
+  },
+  "${modID}:Horizon": {
+    "NAME": "Horizon",
+    "DESCRIPTION": "Draw !M! cards. NL ${modID}:Echo if this is the first card played this turn.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Draw !M! cards. NL ${modID}:Echo if this is the first card played this turn."
+  },
+  "${modID}:Indifference": {
+    "NAME": "Indifference",
+    "DESCRIPTION": "Gain !B! Block. If no damage is taken this turn, gain 2 Energy at the start of your next turn."
+  },
+  "${modID}:LastStand": {
+    "NAME": "Last Stand",
+    "DESCRIPTION": "Heal !M! HP. NL ${modID}:Echo if your HP is at or below 25%. NL Exhaust."
+  },
+  "${modID}:NerveCorrosion": {
+    "NAME": "Nerve Corrosion",
+    "DESCRIPTION": "Whenever an Attack deals unblocked damage, apply !M! ${modID}:Corrosion."
+  },
+  "${modID}:CollectSample": {
+    "NAME": "Collect Sample",
+    "DESCRIPTION": "Deal !D! damage. If Fatal, obtain a random potion. Exhaust."
+  },
+  "${modID}:Stormbreak": {
+    "NAME": "Stormbreak",
+    "DESCRIPTION": "Deal !D! damage. Enter ${modID}:Thorns."
+  },
+  "${modID}:IberianTechnique": {
+    "NAME": "Iberian Technique",
+    "DESCRIPTION": "Deal !D! damage. Put !M! Attack from your discard pile into your hand.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. Put !M! Attacks from your discard pile into your hand."
   }
 }

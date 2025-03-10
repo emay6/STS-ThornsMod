@@ -56,5 +56,19 @@
       " card.",
       " cards."
     ]
+  },
+  "${modID}:IndifferencePower": {
+    "NAME": "Indifference",
+    "DESCRIPTIONS": [
+      "Gain #b",
+      " additional [G] next turn. NL Receiving unblocked attack damage removes all #yIndifference."
+    ]
+  },
+  "${modID}:NerveCorrosionPower": {
+    "NAME": "Nerve Corrosion",
+    "DESCRIPTIONS": [
+      "Whenever you deal unblocked attack damage, apply #b",
+      " #yCorrosion."
+    ]
   }
 }
