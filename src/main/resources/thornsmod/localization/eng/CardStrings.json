@@ -210,5 +210,23 @@
     "NAME": "Lodestar",
     "DESCRIPTION": "Put 1 card from your draw pile into your hand. Exhaust.",
     "UPGRADE_DESCRIPTION": "Put 1 card from your draw pile into your hand."
+  },
+  "${modID}:LurchinUrchin": {
+    "NAME": "Lurchin' Urchin",
+    "DESCRIPTION": "Gain !M! Thorns. NL ${modID}:Echo if in ${modID}:Thorns."
+  },
+  "${modID}:MasterSwordsman": {
+    "NAME": "Master Swordsman",
+    "DESCRIPTION": "At the start of your turn, add a random Attack into your hand.",
+    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, add a random Attack into your hand."
+  },
+  "${modID}:OffensiveRecovery": {
+    "NAME": "Offensive Recovery",
+    "DESCRIPTION": "Deal !D! damage. Play this card X times.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. Play this card X+1 times."
+  },
+  "${modID}:Relentless": {
+    "NAME": "Relentless",
+    "DESCRIPTION": "Gain !M! Energy. You can no longer gain Block this turn."
   }
 }

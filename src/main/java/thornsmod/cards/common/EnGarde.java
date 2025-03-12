@@ -15,7 +15,7 @@ public class EnGarde extends BaseCard {
     // basic card info
     private static final CardStats info = new CardStats(
             ThornsCharacter.Meta.CARD_COLOR,
-            CardType.ATTACK,
+            CardType.SKILL,
             CardRarity.COMMON,
             CardTarget.ENEMY,
             2

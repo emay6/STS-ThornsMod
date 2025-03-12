@@ -70,5 +70,19 @@
       "Whenever you deal unblocked attack damage, apply #b",
       " #yCorrosion."
     ]
+  },
+  "${modID}:MasterSwordsmanPower": {
+    "NAME": "Master Swordsman",
+    "DESCRIPTIONS": [
+      "At the start of your turn, add #b",
+      " random Attacks into your hand.",
+      " random Attack into your hand."
+    ]
+  },
+  "${modID}:RelentlessPower": {
+    "NAME": "Relentless",
+    "DESCRIPTIONS": [
+      "You can no longer gain Block this turn."
+    ]
   }
 }
